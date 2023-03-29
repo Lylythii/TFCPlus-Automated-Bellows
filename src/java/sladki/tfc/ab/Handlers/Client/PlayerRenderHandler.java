@@ -1,8 +1,8 @@
 package sladki.tfc.ab.Handlers.Client;
 
-import com.bioxx.tfc.Core.Player.InventoryPlayerTFC;
-import com.bioxx.tfc.Items.Tools.ItemCustomAxe;
-import com.bioxx.tfc.Items.Tools.ItemWeapon;
+import com.dunk.tfc.Core.Player.InventoryPlayerTFC;
+import com.dunk.tfc.Items.Tools.ItemCustomAxe;
+import com.dunk.tfc.Items.Tools.ItemWeapon;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

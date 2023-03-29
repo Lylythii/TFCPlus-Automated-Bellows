@@ -1,7 +1,7 @@
 package sladki.tfc.ab.Blocks;
 
-import com.bioxx.tfc.Core.TFCTabs;
-import com.bioxx.tfc.api.TFCItems;
+import com.dunk.tfc.Core.TFCTabs;
+import com.dunk.tfc.api.TFCItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;

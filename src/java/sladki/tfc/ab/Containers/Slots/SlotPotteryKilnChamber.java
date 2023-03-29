@@ -1,6 +1,6 @@
 package sladki.tfc.ab.Containers.Slots;
 
-import com.bioxx.tfc.Items.Pottery.ItemPotteryBase;
+import com.dunk.tfc.Items.Pottery.ItemPotteryBase;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;

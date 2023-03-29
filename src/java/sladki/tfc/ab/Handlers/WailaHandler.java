@@ -1,6 +1,6 @@
 package sladki.tfc.ab.Handlers;
 
-import com.bioxx.tfc.Core.TFC_Time;
+import com.dunk.tfc.Core.TFC_Time;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;

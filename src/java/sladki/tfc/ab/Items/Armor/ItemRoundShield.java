@@ -1,16 +1,19 @@
 package sladki.tfc.ab.Items.Armor;
 
-import com.bioxx.tfc.Core.TFCTabs;
-import com.bioxx.tfc.Items.ItemTerra;
-import com.bioxx.tfc.api.Armor;
-import com.bioxx.tfc.api.Crafting.AnvilManager;
-import com.bioxx.tfc.api.Enums.EnumSize;
-import com.bioxx.tfc.api.Enums.EnumWeight;
-import com.bioxx.tfc.api.Interfaces.IEquipable;
+import com.dunk.tfc.Core.TFCTabs;
+import com.dunk.tfc.Items.ItemTerra;
+import com.dunk.tfc.api.Armor;
+import com.dunk.tfc.api.Crafting.AnvilManager;
+import com.dunk.tfc.api.Enums.EnumSize;
+import com.dunk.tfc.api.Enums.EnumWeight;
+import com.dunk.tfc.api.Interfaces.IEquipable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+
 import org.lwjgl.opengl.GL11;
 import sladki.tfc.ab.AutomatedBellows;
 import sladki.tfc.ab.ModManager;
@@ -22,7 +25,7 @@ public class ItemRoundShield extends ItemTerra implements IEquipable {
 	private int shieldId;
 	private int colour;
 	
-	private ItemRoundShield(int id, int durability, int[] armourRating, float[] armourColour) {
+	private ItemRoundShield(int id, float f, int[] armourRating, float[] armourColour) {
 		super();
 		setCreativeTab(TFCTabs.TFC_ARMOR);
 		setWeight(EnumWeight.HEAVY);
@@ -30,7 +33,7 @@ public class ItemRoundShield extends ItemTerra implements IEquipable {
 		maxStackSize = 1;
 
 		shieldId = id;
-		setMaxDamage(durability);
+		setMaxDamage((int) f);
 		damageTypesResistances[0] = (armourRating[0] == -1000) ? 1000.0f: (1000.0f / (1000.0f + armourRating[0]));
 		damageTypesResistances[1] = (armourRating[1] == -1000) ? 1000.0f: (1000.0f / (1000.0f + armourRating[1]));
 		damageTypesResistances[2] = (armourRating[2] == -1000) ? 1000.0f: (1000.0f / (1000.0f + armourRating[2]));
@@ -45,9 +48,9 @@ public class ItemRoundShield extends ItemTerra implements IEquipable {
 	public ItemRoundShield(int id, Armor originArmor, float red, float green, float blue) {
 		this(id, originArmor.getSlashingAR(),
 			new int[]{
-				originArmor.getPiercingAR(),
-				originArmor.getSlashingAR(),
-				originArmor.getCrushingAR()
+				(int) originArmor.getPiercingAR(),
+				(int) originArmor.getSlashingAR(),
+				(int) originArmor.getCrushingAR()
 			}, new float[]{red, green, blue });
 	}
 	
@@ -115,6 +118,30 @@ public class ItemRoundShield extends ItemTerra implements IEquipable {
 	@Override
 	public void onEquippedRender() {
 		GL11.glScalef(0.0f, 0.0f, 0.0f);
+	}
+
+	@Override
+	public boolean canGoInBackSlot(ItemStack arg0) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'canGoInBackSlot'");
+	}
+
+	@Override
+	public ResourceLocation getClothingTexture(Entity arg0, ItemStack arg1, int arg2) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getClothingTexture'");
+	}
+
+	@Override
+	public ClothingType getClothingType() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getClothingType'");
+	}
+
+	@Override
+	public EquipType[] getMutuallyExclusiveSlots() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getMutuallyExclusiveSlots'");
 	}
 
 }

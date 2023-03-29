@@ -1,7 +1,7 @@
 package sladki.tfc.ab.Containers.Slots;
 
-import com.bioxx.tfc.api.TFCBlocks;
-import com.bioxx.tfc.api.TFCItems;
+import com.dunk.tfc.api.TFCBlocks;
+import com.dunk.tfc.api.TFCItems;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;

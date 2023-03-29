@@ -1,11 +1,11 @@
 package sladki.tfc.ab.Handlers;
 
-import com.bioxx.tfc.Core.Player.InventoryPlayerTFC;
-import com.bioxx.tfc.Handlers.EntityDamageHandler;
-import com.bioxx.tfc.Items.Tools.ItemCustomAxe;
-import com.bioxx.tfc.Items.Tools.ItemWeapon;
-import com.bioxx.tfc.api.Enums.EnumDamageType;
-import com.bioxx.tfc.api.Interfaces.ICausesDamage;
+import com.dunk.tfc.Core.Player.InventoryPlayerTFC;
+import com.dunk.tfc.Handlers.EntityDamageHandler;
+import com.dunk.tfc.Items.Tools.ItemCustomAxe;
+import com.dunk.tfc.Items.Tools.ItemWeapon;
+import com.dunk.tfc.api.Enums.EnumDamageType;
+import com.dunk.tfc.api.Interfaces.ICausesDamage;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.Entity;
@@ -23,7 +23,7 @@ import java.util.Random;
 public class PlayerAttackedEventHandler {
 	
 	private static final Random rand = new Random();
-	private static EntityDamageHandler entityDamageHandler = null;
+	//private static EntityDamageHandler entityDamageHandler = null;
 
 
 	@SubscribeEvent(priority=EventPriority.LOW)
@@ -145,19 +145,19 @@ public class PlayerAttackedEventHandler {
 		if(source.getSourceOfDamage() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)source.getSourceOfDamage();
 			if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ICausesDamage) {
-				return ((ICausesDamage)player.getCurrentEquippedItem().getItem()).getDamageType();
+				return ((ICausesDamage)player.getCurrentEquippedItem().getItem()).getDamageType(player);
 			}
 		}
 
 		if(source.getSourceOfDamage() instanceof EntityLiving) {
 			EntityLiving entityLiving = (EntityLiving)source.getSourceOfDamage();
 			if(entityLiving.getHeldItem() != null && entityLiving.getHeldItem().getItem() instanceof ICausesDamage) {
-				return ((ICausesDamage)entityLiving.getHeldItem().getItem()).getDamageType();
+				return ((ICausesDamage)entityLiving.getHeldItem().getItem()).getDamageType(entityLiving);
 			}
 		}
 
 		if(source.getSourceOfDamage() instanceof ICausesDamage) {
-			return ((ICausesDamage)source.getSourceOfDamage()).getDamageType();
+			return ((ICausesDamage)source.getSourceOfDamage()).getDamageType(null);
 		}
 
 		return EnumDamageType.GENERIC;

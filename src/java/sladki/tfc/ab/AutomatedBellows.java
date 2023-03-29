@@ -1,6 +1,6 @@
 package sladki.tfc.ab;
 
-import com.bioxx.tfc.TerraFirmaCraft;
+import com.dunk.tfc.TerraFirmaCraft;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -16,12 +16,12 @@ import sladki.tfc.ab.Handlers.Anvil.AnvilLoadWorldEventHandler;
 import sladki.tfc.ab.Handlers.*;
 import sladki.tfc.ab.Handlers.Network.PlayerEquipUpdatePacket;
 
-@Mod(name = AutomatedBellows.MODNAME, modid = AutomatedBellows.MODID, version = AutomatedBellows.VERSION, dependencies = "required-after:terrafirmacraft")
+@Mod(name = AutomatedBellows.MODNAME, modid = AutomatedBellows.MODID, version = AutomatedBellows.VERSION, dependencies = "required-after:terrafirmacraftplus")
 public class AutomatedBellows {
 
 	public static final String MODID = "tfcautomatedbellows";
-	public static final String MODNAME = "AutomatedBellowsAddon";
-	public static final String VERSION = "1.1a";
+	public static final String MODNAME = "TFC+ Automated Bellows";
+	public static final String VERSION = "2.0.0";
 	
 	@Instance(AutomatedBellows.MODID)
     public static AutomatedBellows instance;

@@ -1,8 +1,8 @@
 package sladki.tfc.ab.Handlers;
 
-import com.bioxx.tfc.Core.Player.InventoryPlayerTFC;
-import com.bioxx.tfc.Handlers.Network.AbstractPacket;
-import com.bioxx.tfc.TerraFirmaCraft;
+import com.dunk.tfc.Core.Player.InventoryPlayerTFC;
+import com.dunk.tfc.Handlers.Network.AbstractPacket;
+import com.dunk.tfc.TerraFirmaCraft;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

@@ -1,7 +1,7 @@
 package sladki.tfc.ab.Blocks;
 
-import com.bioxx.tfc.Core.TFCTabs;
-import com.bioxx.tfc.api.TFCBlocks;
+import com.dunk.tfc.Core.TFCTabs;
+import com.dunk.tfc.api.TFCBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;

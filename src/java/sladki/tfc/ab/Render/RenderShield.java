@@ -1,6 +1,6 @@
 package sladki.tfc.ab.Render;
 
-import com.bioxx.tfc.Core.Player.InventoryPlayerTFC;
+import com.dunk.tfc.Core.Player.InventoryPlayerTFC;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.renderer.OpenGlHelper;

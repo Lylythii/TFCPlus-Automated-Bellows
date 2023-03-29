@@ -1,7 +1,7 @@
 package sladki.tfc.ab.Handlers.Network;
 
-import com.bioxx.tfc.Core.Player.InventoryPlayerTFC;
-import com.bioxx.tfc.Handlers.Network.AbstractPacket;
+import com.dunk.tfc.Core.Player.InventoryPlayerTFC;
+import com.dunk.tfc.Handlers.Network.AbstractPacket;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import net.minecraft.client.Minecraft;

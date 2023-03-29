@@ -1,9 +1,9 @@
 package sladki.tfc.ab.TileEntities;
 
-import com.bioxx.tfc.Core.TFC_Core;
-import com.bioxx.tfc.Core.TFC_Time;
-import com.bioxx.tfc.api.Crafting.KilnCraftingManager;
-import com.bioxx.tfc.api.Crafting.KilnRecipe;
+import com.dunk.tfc.Core.TFC_Core;
+import com.dunk.tfc.Core.TFC_Time;
+import com.dunk.tfc.api.Crafting.KilnCraftingManager;
+import com.dunk.tfc.api.Crafting.KilnRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,6 +22,7 @@ import java.util.Random;
 
 public class TEPotteryKiln extends TileEntity implements IInventory {
 	
+	private static final boolean isVanilla = false;
 	private ItemStack[] inventory = new ItemStack[12];	//12 slots: 1-4 for logs, 5-12 for raw pottery
 	private long launchTime;
 	
@@ -45,8 +46,8 @@ public class TEPotteryKiln extends TileEntity implements IInventory {
 			}	
 		}
 		
-		TFC_Core.handleItemTicking(this, this.worldObj, xCoord, yCoord, zCoord);
-		
+		TFC_Core.handleItemTicking(this, this.worldObj, xCoord, yCoord, zCoord, isVanilla);
+
 		tickCounter++;
 		if(tickCounter < 100) {
 			return;

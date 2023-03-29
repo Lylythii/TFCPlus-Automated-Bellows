@@ -1,15 +1,15 @@
 [
 {
   "modid": "tfcautomatedbellows",
-  "name": "AutomatedBellowsAddon",
-  "description": "TFC bellows automatizer addon.",
+  "name": "TFC+ Automated Bellows",
+  "description": "TFC Automated Bellows port for TerraFirmaCraft+!",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Sladki"],
+  "authorList": ["Lylythii", "Sladki"],
   "credits": "",
-  "logoFile": "",
+  "logoFile": "tfcbellows.png",
   "screenshots": [],
   "dependencies": []
 }

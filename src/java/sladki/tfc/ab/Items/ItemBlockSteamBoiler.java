@@ -1,8 +1,8 @@
 package sladki.tfc.ab.Items;
 
-import com.bioxx.tfc.Core.TFCTabs;
-import com.bioxx.tfc.Items.ItemBlocks.ItemTerraBlock;
-import com.bioxx.tfc.api.Enums.EnumSize;
+import com.dunk.tfc.Core.TFCTabs;
+import com.dunk.tfc.Items.ItemBlocks.ItemTerraBlock;
+import com.dunk.tfc.api.Enums.EnumSize;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 

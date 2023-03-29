@@ -1,8 +1,8 @@
 package sladki.tfc.ab.Entities.Mobs.Extended;
 
-import com.bioxx.tfc.Entities.AI.EntityAIAvoidEntityTFC;
-import com.bioxx.tfc.Entities.AI.EntityAIPanicTFC;
-import com.bioxx.tfc.Entities.Mobs.*;
+import com.dunk.tfc.Entities.AI.EntityAIAvoidEntityTFC;
+import com.dunk.tfc.Entities.AI.EntityAIPanicTFC;
+import com.dunk.tfc.Entities.Mobs.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIFollowParent;
