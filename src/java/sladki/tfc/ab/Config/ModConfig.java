@@ -45,7 +45,7 @@ public class ModConfig {
 				, "Ejects all food fron non TFC containers on opening by a player. 'True' if enabled.");
 		
 		//Shields
-		shieldsEnabled = config.getBoolean("enabled", "shields", true, "");
+		shieldsEnabled = config.getBoolean("enabled", "shields", false, "");
 		shieldsBlockChance = config.getInt("block_chance", "shields", 25, 0, 100
 				, "The chance to block an attack with 90 angle while not blocking. "
 						+ "The chance to block while blocking is 4 times greater.");

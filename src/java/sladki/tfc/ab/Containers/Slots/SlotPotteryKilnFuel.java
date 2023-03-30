@@ -18,7 +18,8 @@ public class SlotPotteryKilnFuel extends Slot {
 	public boolean isItemValid(ItemStack itemStack)
 	{
         return itemStack.getItem() == TFCItems.logs
-                || itemStack.getItem() == Item.getItemFromBlock(TFCBlocks.peat);
+			|| itemStack.getItem() == Item.getItemFromBlock(TFCBlocks.peat)
+		;
     }
 
 	@Override

@@ -45,6 +45,12 @@ public class ModManager {
 
 	public static Item shepherdStaff;
 
+	// Mechanical Parts
+	public static Item bellowPiston;
+	public static Item wroughtIronSpring;
+	public static Item wroughtIronCanister;
+	public static Item clothFilter;
+
 	private static AnvilPlayerTickEventHandler playerAnvilTickEventHandler = new AnvilPlayerTickEventHandler();
 	
 	
@@ -110,6 +116,13 @@ public class ModManager {
 		if(ModConfig.shepherdStaffEnabled) {
 			shepherdStaff = new ItemShepherdStaff().setUnlocalizedName("shepherdStaff");
 		}
+
+			// Mechanical Parts
+			bellowPiston = new ItemBellowPiston().setUnlocalizedName("bellowPiston");
+			wroughtIronSpring = new ItemWroughtIronSpring().setUnlocalizedName("wroughtIronSpring");
+			wroughtIronCanister = new ItemWroughtIronCanister().setUnlocalizedName("wroughtIronCanister");
+			clothFilter = new ItemClothFilter().setUnlocalizedName("clothFilter");
+
 	}
 	
 	public static void registerItems() {
@@ -125,62 +138,107 @@ public class ModManager {
 			GameRegistry.registerItem(shieldRegistry[id++], "redSteelShield");
 			GameRegistry.registerItem(shieldRegistry[id++], "steelShield");
 			
-			GameRegistry.registerItem(shieldRegistry[14], "shepherdStaff");
+			GameRegistry.registerItem(shieldRegistry[14], "woodenShield");
 		}
 
 		if(ModConfig.shepherdStaffEnabled) {
-			GameRegistry.registerItem(shepherdStaff, "woodenShield");
-		}
-	}
-	
-	public static void registerRecipes() {
-		if(ModConfig.ABEnabled) {
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bellowsDriverBlock, 1, 0), "   ", "SPS", "   ",
-					Character.valueOf('S'), new ItemStack(TFCItems.wroughtIronSheet),
-					Character.valueOf('P'), new ItemStack(Blocks.piston)));
-			
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(steamBoilerBlock, 1, 0), " C ", "SBS", " C ",
-					Character.valueOf('C'), new ItemStack(TFCItems.clayBall, 0, 1),
-					Character.valueOf('S'), new ItemStack(TFCItems.wroughtIronSheet),
-					Character.valueOf('B'), new ItemStack(TFCBlocks.fireBrick)));
+			GameRegistry.registerItem(shepherdStaff, "shepherdStaff");
 		}
 		
-		if(ModConfig.PKEnabled) {
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(potteryKilnBlock, 1, 0), "BBB", "C C", "BBB",
-					Character.valueOf('C'), new ItemStack(TFCItems.clayBall, 0, 1),
-					Character.valueOf('B'), new ItemStack(TFCItems.fireBrick, 0, 1)));
+			// Mechanical Parts
+			GameRegistry.registerItem(bellowPiston, "bellowPiston");
+			GameRegistry.registerItem(wroughtIronSpring, "wroughtIronSpring");
+			GameRegistry.registerItem(wroughtIronCanister, "wroughtIronCanister");
+			GameRegistry.registerItem(clothFilter, "clothFilter");
+
+	}
+	
+	
+	public static void registerRecipes() {
+		
+		if(ModConfig.ABEnabled) {
+			/* ---- Bellows Driver ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bellowsDriverBlock, 1, 0), " W ", "SPS", " W ",
+					Character.valueOf('S'), new ItemStack(TFCItems.wroughtIronSheet),
+					Character.valueOf('P'), new ItemStack(bellowPiston),
+					Character.valueOf('W'), new ItemStack(wroughtIronSpring)
+			));
 			
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(potteryKilnChamberBlock, 1, 0), "B B", "C C", "B B",
-					Character.valueOf('C'), new ItemStack(TFCItems.clayBall, 0, 1),
-					Character.valueOf('B'), new ItemStack(TFCItems.fireBrick, 0, 1)));
+			/* ---- Steam Boiler ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(steamBoilerBlock, 1, 0), " C ", "SBS", " C ",
+					Character.valueOf('C'), new ItemStack(wroughtIronCanister),
+					Character.valueOf('S'), new ItemStack(TFCItems.wroughtIronSheet),
+					Character.valueOf('B'), new ItemStack(TFCBlocks.fireBrick)
+			));
 		}
 		
 		if(ModConfig.WFEnabled) {
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(waterFilterBlock, 1, 0), " S ", "BGB", " C ",
-					Character.valueOf('S'), "blockSand",
+			/* ---- Water Filter ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(waterFilterBlock, 1, 0), " S ", "BCB", " S ",
+					Character.valueOf('S'), new ItemStack(TFCItems.burlapCloth, 0, 1),
 					Character.valueOf('B'), new ItemStack(TFCItems.bronzeSheet),
-					Character.valueOf('G'), "blockGravel",
-					Character.valueOf('C'), "cobblestone"));
+					Character.valueOf('C'), new ItemStack(clothFilter)
+			));
+		}
+		
+		if(ModConfig.PKEnabled) {
+			/* ---- Pottery Kiln ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(potteryKilnBlock, 1, 0), "BBB", "C C", "BBB",
+					Character.valueOf('C'), new ItemStack(TFCItems.copperSheet, 0, 1),
+					Character.valueOf('B'), new ItemStack(TFCItems.fireBrick, 0, 1)
+			));
+			
+			/* ---- Pottery Kiln Chamber ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(potteryKilnChamberBlock, 1, 0), "B B", "C C", "B B",
+					Character.valueOf('C'), new ItemStack(TFCItems.copperSheet, 0, 1),
+					Character.valueOf('B'), new ItemStack(TFCItems.fireBrick, 0, 1)
+			));
 		}
 		
 		if(ModConfig.shieldsEnabled) {
+			/* ---- Wooden Shield ---- */
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shieldRegistry[14], 1, 0), " L ", "LAL", " L ",
 					Character.valueOf('L'), "logWood",
-					Character.valueOf('A'), "itemAxe"));
+					Character.valueOf('A'), "itemAxe"
+			));
 		}
-
+		
 		if(ModConfig.shepherdStaffEnabled) {
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shepherdStaff, 1, 0), " K ", " S ", " S ",
-					Character.valueOf('S'), "stickWood",
-					Character.valueOf('K'), "itemKnife"));
+			/* ---- Shepherd's Staff ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shepherdStaff, 1, 0), "K", "S",
+					Character.valueOf('K'), "itemKnife",
+					Character.valueOf('S'), new ItemStack(TFCItems.woodenStaff)
+			));
 		}
+		
+			/* ---- Bellow Piston ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bellowPiston, 1, 0), " W ", "SPS", " W ",
+					Character.valueOf('W'), new ItemStack(TFCItems.wroughtIronSheet),
+					Character.valueOf('S'), new ItemStack(wroughtIronSpring),
+					Character.valueOf('P'), new ItemStack(Blocks.piston)
+			));
+			/* ---- Wrought Iron Canister ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(wroughtIronCanister, 1, 0), " W ", "WGW", " W ",
+					Character.valueOf('W'), new ItemStack(TFCItems.wroughtIronSheet),
+					Character.valueOf('G'), new ItemStack(Blocks.glass)
+			));
+			/* ---- Wrought Iron Spring ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(wroughtIronSpring, 4, 0), "K", "W",
+					Character.valueOf('W'), new ItemStack(TFCItems.wroughtIronSheet),
+					Character.valueOf('K'), "itemKnife"
+			));
+			/* ---- Burlap Cloth Filter ---- */
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(clothFilter, 1, 0), "K", "B", "K",
+					Character.valueOf('B'), new ItemStack(TFCItems.burlapCloth, 0, 1),
+					Character.valueOf('K'), "itemKnife"
+			));
 	}
 
 	public static void registerAnvilRecipes() {
-		String metalShieldPlane = "metalShield";
+		String metalShieldSmithingPlan = "metalShield";
 
 		Map map = AnvilManager.getInstance().getPlans();
-		if(map.containsKey(metalShieldPlane)) {
+		if(map.containsKey(metalShieldSmithingPlan)) {
 			return;
 		}
 
@@ -189,26 +247,27 @@ public class ModManager {
 		}
 
 		AnvilManager manager = AnvilManager.getInstance();
-		manager.addPlan(metalShieldPlane, new PlanRecipe(new RuleEnum[]{RuleEnum.DRAWANY, RuleEnum.HITSECONDFROMLAST, RuleEnum.PUNCHLAST}));
+		manager.addPlan(metalShieldSmithingPlan, new PlanRecipe(new RuleEnum[]{RuleEnum.DRAWANY, RuleEnum.HITSECONDFROMLAST, RuleEnum.PUNCHLAST}));
+		manager.addPlan(metalShieldSmithingPlan, new PlanRecipe(new RuleEnum[]{RuleEnum.DRAWANY, RuleEnum.HITSECONDFROMLAST, RuleEnum.PUNCHLAST}));
 
 		int id = 0;
-		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.bismuthBronzeIngot2x), null, metalShieldPlane, false, AnvilReq.BISMUTHBRONZE,
+		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.bismuthBronzeIngot2x), null, metalShieldSmithingPlan, false, AnvilReq.BISMUTHBRONZE,
 				new ItemStack(shieldRegistry[id++], 1)).addRecipeSkill(Global.SKILL_ARMORSMITH));
-		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.blackBronzeIngot2x), null, metalShieldPlane, false, AnvilReq.BLACKBRONZE,
+		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.blackBronzeIngot2x), null, metalShieldSmithingPlan, false, AnvilReq.BLACKBRONZE,
 				new ItemStack(shieldRegistry[id++], 1)).addRecipeSkill(Global.SKILL_ARMORSMITH));
-		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.blackSteelIngot2x), null, metalShieldPlane, false, AnvilReq.BLACKSTEEL,
+		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.blackSteelIngot2x), null, metalShieldSmithingPlan, false, AnvilReq.BLACKSTEEL,
 				new ItemStack(shieldRegistry[id++], 1)).addRecipeSkill(Global.SKILL_ARMORSMITH));
-		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.blueSteelIngot2x), null, metalShieldPlane, false, AnvilReq.BLUESTEEL,
+		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.blueSteelIngot2x), null, metalShieldSmithingPlan, false, AnvilReq.BLUESTEEL,
 				new ItemStack(shieldRegistry[id++], 1)).addRecipeSkill(Global.SKILL_ARMORSMITH));
-		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.bronzeIngot2x), null, metalShieldPlane, false, AnvilReq.BRONZE,
+		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.bronzeIngot2x), null, metalShieldSmithingPlan, false, AnvilReq.BRONZE,
 				new ItemStack(shieldRegistry[id++], 1)).addRecipeSkill(Global.SKILL_ARMORSMITH));
-		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.copperIngot2x), null, metalShieldPlane, false, AnvilReq.COPPER,
+		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.copperIngot2x), null, metalShieldSmithingPlan, false, AnvilReq.COPPER,
 				new ItemStack(shieldRegistry[id++], 1)).addRecipeSkill(Global.SKILL_ARMORSMITH));
-		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.wroughtIronIngot2x), null, metalShieldPlane, false, AnvilReq.WROUGHTIRON,
+		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.wroughtIronIngot2x), null, metalShieldSmithingPlan, false, AnvilReq.WROUGHTIRON,
 				new ItemStack(shieldRegistry[id++], 1)).addRecipeSkill(Global.SKILL_ARMORSMITH));
-		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.redSteelIngot2x), null, metalShieldPlane, false, AnvilReq.REDSTEEL,
+		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.redSteelIngot2x), null, metalShieldSmithingPlan, false, AnvilReq.REDSTEEL,
 				new ItemStack(shieldRegistry[id++], 1)).addRecipeSkill(Global.SKILL_ARMORSMITH));
-		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.steelIngot2x), null, metalShieldPlane, false, AnvilReq.STEEL,
+		manager.addRecipe(new AnvilRecipe(new ItemStack(TFCItems.steelIngot2x), null, metalShieldSmithingPlan, false, AnvilReq.STEEL,
 				new ItemStack(shieldRegistry[id++], 1)).addRecipeSkill(Global.SKILL_ARMORSMITH));
 	}
 

@@ -24,3 +24,8 @@ container.PotteryKiln.name=Pottery Kiln
 container.PotteryKilnChamber.name=Pottery Kiln Chamber
 
 gui.plans.metalshield=Metal Shield
+
+item.bellowPiston.name=Bellow Piston
+item.wroughtIronSpring.name=Wrought Iron Spring
+item.wroughtIronCanister.name=Wrought Iron Canister
+item.clothFilter.name=Burlap Cloth Filter

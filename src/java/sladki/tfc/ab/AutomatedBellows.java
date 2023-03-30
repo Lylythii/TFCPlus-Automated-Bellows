@@ -36,6 +36,7 @@ public class AutomatedBellows {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		
 		if(ModConfig.shieldsEnabled || ModConfig.shepherdStaffEnabled) {
 			FMLCommonHandler.instance().bus().register(new ItemCraftedEventHandler());
 		}
