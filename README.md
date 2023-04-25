@@ -5,3 +5,6 @@
 - [Original Forum Thread](http://terrafirmacraft.com/f/topic/7990-tfc-07929-automated-bellows-addon-pottery-kiln-water-filter-shields/)
 - [Original Forum Thread (Archive.org)](https://web.archive.org/web/20211025043021/https://terrafirmacraft.com/f/topic/7990-tfc-07929-automated-bellows-addon-pottery-kiln-water-filter-shields/)
 - [Original GitHub Repository](https://github.com/Sladki/TFC-AutomatedBellows-Addon)
+
+# Permision to port/release
+- [re: Sladki/TFC-AutomatedBellows](https://github.com/Sladki/TFC-AutomatedBellows-Addon/issues/8#issuecomment-1521035037)
